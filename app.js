@@ -1,36 +1,19 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var urlparser = bodyParser.urlencoded({ extended: false });
+/* class Circle {
+    constructor (radius) {
+        this.radius = radius;
+    }
+    get area () {
+        return Math.PI * this.radius * this.radius;
+    }
+    set area (n) {
+        this.radius = Math.sqrt(n / Math.PI);
+    }
+}
 
-app.set('view engine', 'ejs'); 
-app.use('/resources', express.static('resources'));
+let circle = new Circle(10); 
+circle.area = 20;
+console.log(circle.area);
+ */
 
-app.get('/home', (req, res) => {
-	res.render('index');
-});
 
-app.get('/contact', (req, res) => {
-	res.render('contact', {ms:req.query});
-});
-
-app.post('/contact', urlparser, (req, res) => {
-	res.render('contact-success', {data:req.body});
-});
-
-app.get('/profile/:name', (req, res) => {
-	var data = {age:29, job: 'PM', hobbies:['eating', 'fighting', 'sleeping']}; 
-	res.render('profile', {man: req.params.name, data:data});
-});
-
-app.get('/api/endpoint1', (req, res) =>{ 
-	res.header('Content-Type', 'application/json')
-	var obj = {name:'Ali', job:'PM', age:35}; 
-	res.send(JSON.stringify(obj)); 
-});
-
-app.get('*', (req, res) => {
-	res.render('404'); 
-}); 
-
-app.listen(3000); 
+ 
