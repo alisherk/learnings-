@@ -94,7 +94,8 @@ class LinkedList {
 
 const list = new LinkedList(1); 
 list.append(2); 
-list.append(3)
+list.prepend(3)
+/* list.append(3)
 list.append(4)
-list.reverse();
+list.reverse(); */
 
