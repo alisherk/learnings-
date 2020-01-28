@@ -5,13 +5,17 @@
     "version": "0.2.0",
     "configurations": [
 
-    
-        
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/data-structures/SinglyLinkedList.js"
+            "program": "${workspaceFolder}/data-structures/CrazyQueue.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/data-structures/Queue.js"
         },
        
     ]

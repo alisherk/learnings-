@@ -1,6 +1,5 @@
 const string = 'Hello there'; 
 
-
 function reverseStr(str){
     if(!str || str.length < 1 || typeof str !== 'string'){
         throw new Error('input must be a string'); 
@@ -40,4 +39,3 @@ function range(str, end) {
 }
 
 console.log(range(1,5));
-
