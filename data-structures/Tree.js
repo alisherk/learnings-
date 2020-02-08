@@ -132,16 +132,6 @@ class Node {
       }
   }
   
-  const tree = new BinarySearchTree();
-  tree.insert(9)
-  tree.insert(4)
-  tree.insert(6)
-  tree.insert(20)
-  tree.insert(170)
-  tree.insert(15)
-  tree.insert(1)
-  JSON.stringify(traverse(tree.root))
-  
   //     9
   //  4     20
   //1  6  15  170
@@ -152,8 +142,39 @@ class Node {
     tree.right = node.right === null ? null : traverse(node.right);
     return tree;
   }
+
+  const validate = (node, min = null, max = null) => {
+    if(max !== null && node.value > max) {
+      return false;
+    }
+    if(min !== null && node.value < min) {
+      return false;
+    }
+    
+    if(node.left && !validate(node.left, min, node.value)) {
+      // if node.left exists and calling validate with node.left, min, and the value of the current node returns false then something went wrong and we return false
+      return false;
+    }
+    if(node.right && !validate(node.right, node.value, max)) {
+      return false
+    }
+    
+    return true;
+  }
+
+
   
-  
+const tree = new BinarySearchTree();
+tree.insert(9)
+tree.insert(4)
+tree.insert(6)
+tree.insert(20)
+tree.insert(170)
+tree.insert(15)
+tree.insert(1)
+
+
+
   
   
   
