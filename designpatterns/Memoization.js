@@ -1,4 +1,7 @@
-
+  constructor(comparatorFunction) {
+    if (new.target === Heap) {
+      throw new TypeError('Cannot construct Heap instance directly');
+    }
 class MyObject {
   constructor(data) {
     this.data = data;
