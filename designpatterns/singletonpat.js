@@ -1,5 +1,5 @@
 const Singleton = (function(){
-     //instanc stores a ref to the singleton
+     //instance stores a ref to the singleton
     let instance; 
     function init() {
         //private methods and vars 

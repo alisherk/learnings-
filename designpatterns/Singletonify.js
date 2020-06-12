@@ -1,13 +1,12 @@
-const singletonify = (className) => {
+const singletonify = className => {
   return new Proxy(className.prototype.constructor, {
     instance: null,
     construct: (target, argumentsList) => {
-      if (!this.instance)
-        this.instance = new target(...argumentsList);
+      if (!this.instance) this.instance = new target(...argumentsList);
       return this.instance;
     }
   });
-}
+};
 
 class MyClass {
   constructor(msg) {
@@ -22,6 +21,6 @@ class MyClass {
 MySingletonClass = singletonify(MyClass);
 
 const myObj = new MySingletonClass('first');
-myObj.printMsg();           // 'first'
+myObj.printMsg(); // 'first'
 const myObj2 = new MySingletonClass('second');
-myObj2.printMsg();         
+myObj2.printMsg(); //this prints forst as well
