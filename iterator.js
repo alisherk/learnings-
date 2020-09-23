@@ -23,12 +23,20 @@ const iterable = {
     }
   })
 
+  //usage 
+/*   for (let num of nums.reverse()) {
+    // ...
+  } */
+  
+ //console.log([...reverse([5, 6, 7])])
+
   //range 1
-/*   const range = (start = 0, stop, step = 1) => {
+/* const range = (start = 0, stop, step = 1) => {
     if (stop === undefined) {
       [start, stop] = [0, start]
     }
     start -= step
+    //console.log(start);
     return {
       [Symbol.iterator]: () => ({
         next: () => ({
@@ -37,7 +45,14 @@ const iterable = {
         })
       })
     }
-  } */
+  } 
+ */
+  //usage 
+/*  for(let i of range(1, 10)){
+    console.log(i)
+}  
+  console.log([...range(1, 10)]) 
+*/
 
   //range 2
 /*   let range = {
@@ -69,7 +84,7 @@ const iterable = {
     console.log(value);
     ; // 1 then 2, then 3, then 4, then 5
   }
-
+ */
   //async iterate with range 
   let asyncRange = {
     from: 1,
@@ -106,7 +121,7 @@ const iterable = {
       console.log(value); // 1,2,3,4,5
     }
   })()
-   */
+   
 
   //iterator is a generator patterns
 
@@ -125,7 +140,7 @@ const iterable = {
     console.log(value); // 1, then 2, then 3, then 4, then 5
   } */
 
-  const asyncIteratorGenRange = {
+/*   const asyncIteratorGenRange = {
     from: 1,
     to: 5,
   
@@ -146,3 +161,4 @@ const iterable = {
     }
   
   })();
+ */
