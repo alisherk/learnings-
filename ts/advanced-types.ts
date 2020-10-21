@@ -4,7 +4,7 @@ type mappedType<T> = {
 };
 type Props = 'propA' | 'propB';
 type newMappedType1 = mappedType<Props>;
-type newMappedType2 = mappedType<{ a: 'a'; b: 'b' }>;
+type newMappedType2 = mappedType<{ a: 'a'; b: 'b', c: 1 }>;
 
 function printProp(prop: newMappedType1) {
   console.log(prop);
@@ -141,7 +141,7 @@ type InferredResult3 = InferSomething3<{ a: { propA: 1 }, b: { propB: 'b'}}>
 //type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any; 
 type MyFuncReturnValue = ReturnType<() => true>
 
-function f1(): { a: number; b: string };
+declare function f1(): { a: number; b: string };
 
 type ReturnTypeOfF1Func = ReturnType<typeof f1>;
 
@@ -149,12 +149,12 @@ type T3 = ReturnType<<T extends U, U extends number[]>() => T>;
 
 
 //type for returning an object with new key and value
-type ObjectWithNewProp<T, K extends string, V> = T & { [NK in K]: V };
+type ObjectWithNewProp<T, K extends PropertyKey, V> = T & { [NK in K]: V };
 
 export class ObjectManipulator<T> {
   constructor(protected obj: T) {}
 
-  public set<K extends string, V>(key: K, value: V) {
+  public set<K extends PropertyKey, V>(key: K, value: V) {
     return new ObjectManipulator({
       ...this.obj,
       [key]: value,

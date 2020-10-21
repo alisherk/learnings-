@@ -1,9 +1,8 @@
 const memoize = fn => new Proxy(fn, {
   cache: new Map(),
-  apply (target, thisArg, argsList) {
+  apply (target, thisArg, args) {
     let cacheKey = argsList.toString();
-    if(!this.cache.has(cacheKey))
-      this.cache.set(cacheKey, target.apply(thisArg, argsList));
+    if(!this.cache.has(cacheKey)) this.cache.set(cacheKey, target.apply(thisArg, args));
     return this.cache.get(cacheKey);
   }
 });

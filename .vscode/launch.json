@@ -10,7 +10,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/data-structures/Tree.js"
+            "program": "${workspaceFolder}/algorithms/knapsack.js"
         },
         {
             "type": "node",

@@ -70,6 +70,7 @@ let numbers = [0, 1, 2];
 
 numbers = new Proxy(numbers, {
   get(target, prop, receiver) {
+    console.log('reciver', receiver);
     if (prop in target) {
       return target[prop];
     } else {
