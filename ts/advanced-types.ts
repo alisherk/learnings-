@@ -29,7 +29,7 @@ function printMessage(msg: MyMessage) {
 
 printMessage('en')
 
-//first arg T can be any value e.g obj = { a: 'a', b: 'b'}, second value Props will define key of this object
+//first arg T can be any value e.g obj = { a: 'a', b: 'b'}, second value Props will define keys of this object
 // in the body definition of this type we are looking into the keys in K in props and returns obj with that key T[K]
 type Pick1<T, Props extends keyof T> = {
   [K in Props]: T[K];
