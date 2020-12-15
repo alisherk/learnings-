@@ -1,0 +1,36 @@
+
+[
+    {
+        "text": "my unit test failed",
+        "category": "software"
+    }, 
+    {
+        "text": "tried the program, but it was buggy",
+        "category": "software"
+    }, 
+    {
+        "text": "the drive has a 2TB capacity",
+        "category": "hardware"
+    }, 
+    {
+        "text": "I need a new power supply",
+        "category": "hardware"
+    }, 
+    {
+        "text": "unit tests",
+        "category": "software"
+    }, 
+    {
+        "text": "program",
+        "category": "software"
+    }, 
+    {
+        "text": "hard-drive",
+        "category": "hardware"
+    }, 
+    {
+        "text": "Memory",
+        "category": "hardware"
+    }
+
+]

@@ -1,0 +1,14 @@
+{
+  "name": "ml",
+  "version": "1.0.0",
+  "description": "Machine learning project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alisher",
+  "license": "ISC",
+  "dependencies": {
+    "brain.js": "^1.6.1"
+  }
+}
